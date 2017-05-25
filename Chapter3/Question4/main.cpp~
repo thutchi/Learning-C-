@@ -1,0 +1,29 @@
+#include <iostream>
+void Convert(long long x);
+
+int main()
+{
+  long long seconds;
+  cout << "Enter the number of seconds: ";
+  cin >> seconds;
+  cout << seconds << " seconds = ";
+  Convert(seconds);
+}
+
+void Convert(long long x)
+{
+  const HoursinDay = 24;
+  const MinutesinHour = 60;
+  const SecondsinMinute = 60;
+
+  int Seconds = x % SecondsinMinute;
+  
+  int Minutes = Seconds / (SecondsinMinute);
+  Minutes = Minutes % (MinutesinHour);
+
+  int Hour = Minutes / (MinutesinHour);
+  Hour = Hour % HoursinDay;
+
+  int Days = Hour / HoursinDay;
+  cout << Days << " Days," << Hour << " hours," << Minutes << " minutes," << seconds << " seconds" << endl;
+}

@@ -1,0 +1,29 @@
+#include <iostream>
+
+double Celsius_to_Farenheit(double);
+void print_output(double, double);
+
+int main()
+{
+  using namespace std;
+  double temp_in_C;
+  cout << "Please enter a Celsius value: ";
+  cin >> temp_in_C;
+  double temp_in_F = Celsius_to_Farenheit(temp_in_C);
+  print_output(temp_in_F, temp_in_C);
+  
+
+}
+
+double Celsius_to_Farenheit(double x)
+{
+  double degree_farenheit;
+  degree_farenheit = (1.8 * x) + 32.0;
+  return (degree_farenheit);
+}
+
+void print_output(double f, double c)
+{
+  using namespace std;
+  cout << c << " degrees Celsius is " << f << " degrees Farenheit." << endl;
+}
